@@ -11,15 +11,17 @@ body {
 }
 
 header {
-  background-color: #000;
-  padding: 15px 40px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
+    display: flex;
+    align-items: center;
+    padding: 20px;
+    background-color: #fff;
+    color: #000;
+    justify-content: space-between; 
 }
 
 .logo img {
-  height: 40px;
+  height: 50px;
+  margin-right: 30px;
 }
 
 nav .menu {
@@ -29,7 +31,7 @@ nav .menu {
 }
 
 .menu li a {
-  color: white;
+  color: rgb(5, 5, 5);
   text-decoration: none;
   font-weight: 500;
   padding: 8px 12px;
@@ -44,7 +46,7 @@ nav .menu {
 }
 
 .hero {
-  background: url('../images/bmw-hero.jpg') no-repeat center center/cover;
+  background: url('./ảnh/maxresdefault.jpg') no-repeat center center/cover;
   height: 60vh;
   display: flex;
   align-items: center;

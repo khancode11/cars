@@ -3,12 +3,12 @@
 <head>
   <meta charset="UTF-8">
   <title>Mẫu Xe BMW</title>
-  @vite('resources/css/mauxe.css')
+  <link rel="stylesheet" href="{{ asset('css/mauxe.css') }}">
 </head>
 <body>
   <header>
     <div class="logo">
-      <img src="{{ asset('ảnh\tải xuống.jpg') }}" alt="BMW Logo">
+      <img src="https://inkythuatso.com/uploads/images/2021/11/logo-bmw-inkythuatso-4-01-11-09-58-45.jpg" alt="BMW Logo" class="logo">
     </div>
     <nav>
       <ul class="menu">
@@ -29,28 +29,28 @@
   <section class="models">
     <div class="car-grid">
       <div class="car-card">
-        <img src="{{ asset('images/bmw1.jpg') }}" alt="BMW 3 Series">
+        <img src="https://4kwallpapers.com/images/walls/thumbs_2t/8102.jpg" alt="BMW 3 Series">
         <div class="info">
           <h3>BMW 3 Series</h3>
           <p>Thiết kế thể thao, nội thất sang trọng, hiệu suất vượt trội.</p>
         </div>
       </div>
       <div class="car-card">
-        <img src="{{ asset('images/bmw2.jpg') }}" alt="BMW 5 Series">
+        <img src="https://warnersallman.com/1280/6918-alpina-b5-gt-bmw-5-series-.jpg" alt="BMW 5 Series">
         <div class="info">
           <h3>BMW 5 Series</h3>
           <p>Sự cân bằng hoàn hảo giữa sang trọng và công nghệ tiên tiến.</p>
         </div>
       </div>
       <div class="car-card">
-        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRYjqDh7nFnpUN-BM0r4JOlVIJg6O7Tq-5U4Q&s" alt="BMW X5">
+        <img src="https://cms-i.autodaily.vn/du-lieu/2023/11/14/bmw-523d-xdrive-first-edition-japan-00002-2048x1382.webp" alt="BMW X5">
         <div class="info">
           <h3>BMW X5</h3>
           <p>Xe SUV cao cấp với khả năng vận hành mạnh mẽ và linh hoạt.</p>
         </div>
       </div>
       <div class="car-card">
-        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTSzGO02ELxUKVIR6gFaGbTmUgQkAHycbjNxA&s" alt="BMW X7">
+        <img src="https://i1-vnexpress.vnecdn.net/2023/05/02/IMG3144JPG-1683007874.jpg?w=750&h=450&q=100&dpr=1&fit=crop&s=cAiV-p3XuWtVwCrI-OlDdw" alt="BMW X7">
         <div class="info">
           <h3>BMW X7</h3>
           <p>Phong cách sang trọng và không gian rộng rãi cho cả gia đình.</p>

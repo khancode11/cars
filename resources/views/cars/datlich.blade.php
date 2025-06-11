@@ -3,27 +3,52 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Đặt Lịch Lái Thử</title>
-    @vite('resources/css/datlich.css')
+    <title>Đăng Ký Lái Thử</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{{ asset('css/datlich.css') }}" />
 </head>
 <body>
-    <div class="form-container">
-        <div class="form-box">
-            <h1>Đặt Lịch Lái Thử BMW</h1>
-            <form action="#" method="POST">
-                <input type="text" name="name" placeholder="Họ và Tên" required>
-                <input type="email" name="email" placeholder="Email" required>
-                <input type="tel" name="phone" placeholder="Số điện thoại" required>
-                <select name="model" required>
+    <header class="header">
+        <img src="https://inkythuatso.com/uploads/images/2021/11/logo-bmw-inkythuatso-4-01-11-09-58-45.jpg" alt="BMW Logo" class="logo">
+        <nav class="nav">
+            <a href="{{ url('/home') }}">Trang Chủ</a>
+            <a href="{{ url('/mauxe') }}">Mẫu Xe</a>
+            <a href="{{ url('/datlich') }}">Đặt Lịch Lái Thử</a>
+            <a href="{{ url('/phanphoi') }}">Hệ thống phân phối</a>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <div class="form-container">
+            <h1>ĐĂNG KÝ LÁI THỬ XE BMW</h1>
+            <form action="{{ route('testdrive.store') }}" method="POST">
+            @csrf
+                <label>Họ và Tên *</label>
+                <input type="text" placeholder="Nhập họ và tên" required>
+
+                <label>Số điện thoại *</label>
+                <input type="tel" placeholder="Nhập số điện thoại" required>
+
+                <label>Email *</label>
+                <input type="email" placeholder="Nhập email" required>
+
+                <label>Địa chỉ *</label>
+                <input type="text" placeholder="Nhập địa chỉ" required>
+                 <label>Mẫu xe *</label>
+                <select required>
                     <option value="">Chọn mẫu xe</option>
-                    <option value="BMW 3 Series">BMW 3 Series</option>
-                    <option value="BMW 5 Series">BMW 5 Series</option>
-                    <option value="BMW X5">BMW X5</option>
+                    <option value="BMW 320i">BMW 3 Series</option>
+                    <option value="BMW X5">BMW 5 Series</option>
+                    <option value="BMW i4">BMW X5</option>
+                    <option value="BMW X7">BMW X7</option>
                 </select>
-                <input type="date" name="date" required>
-                <button type="submit">Đặt Lịch</button>
+
+                <label>Thời gian lái thử *</label>
+                <input type="datetime-local" required>
+
+                <button type="submit">Gửi đăng ký</button>
             </form>
         </div>
-    </div>
+    </section>
 </body>
 </html>
