@@ -15,6 +15,8 @@
       <a href="{{ url('/mauxe') }}">Mẫu Xe</a>
       <a href="{{ url('/datlich') }}">Đặt Lịch Lái Thử</a>
       <a href="{{ url('/phanphoi') }}">Hệ thống phân phối</a>
+      <a href="{{ url('/login') }}">Đăng nhập</a>
+      <a href="{{ url('/register') }}">Đăng ký</a>
     </nav>
   </header>
 

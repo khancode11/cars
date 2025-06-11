@@ -27,11 +27,11 @@ Route::middleware('auth')->group(function () {
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
+// Route::get('/', function () {
+//     return view('welcome');
+// });
+// Route::resource('cars', CarController::class);
 Route::get('/', function () {
-    return view('welcome');
-});
-Route::resource('cars', CarController::class);
-Route::get('/home', function () {
     return view('cars.home');
 });
 Route::get('/mauxe', function () {
@@ -43,12 +43,11 @@ Route::get('/datlich', function () {
 Route::get('/phanphoi', function () {
     return view('cars.phanphoi');
 });
-Route::prefix('admin')->middleware('auth')->group(function () {
-    Route::get('/', [AdminController::class, 'dashboard'])->name('admin.dashboard');
-    Route::get('/cars', [AdminController::class, 'cars'])->name('admin.cars');
-    Route::get('/test-drives', [AdminController::class, 'testDrives'])->name('admin.testdrives');
-    
-});
+// Route::prefix('admin')->middleware('auth')->group(function () {
+//     Route::get('/', [AdminController::class, 'dashboard'])->name('admin.dashboard');
+//     Route::get('/cars', [AdminController::class, 'cars'])->name('admin.cars');
+//     Route::get('/test-drives', [AdminController::class, 'testDrives'])->name('admin.testdrives');
+// });
 Route::post('/datlich', [TestDriveController::class, 'store'])->name('testdrive.store');
 Route::get('/admin/lich-lai-thu', [TestDriveController::class, 'index'])->name('testdrive.index');
 
