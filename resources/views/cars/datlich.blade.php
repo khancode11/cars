@@ -21,21 +21,35 @@
     <section class="hero">
         <div class="form-container">
             <h1>ĐĂNG KÝ LÁI THỬ XE BMW</h1>
+            @if (session('success'))
+                <div style="color: green; font-weight: bold;">
+                    {{ session('success') }}
+                </div>
+            @endif
+            @if($errors->any())
+                <div style="color: red;">
+                    <ul>
+                        @foreach ($errors->all() as $error)
+                            <li>{{ $error }}</li>
+                        @endforeach
+                    </ul>
+                </div>
+            @endif
             <form action="{{ route('testdrive.store') }}" method="POST">
             @csrf
                 <label>Họ và Tên *</label>
-                <input type="text" placeholder="Nhập họ và tên" required>
+                <input type="text" name="name" placeholder="Nhập họ và tên" required>
 
                 <label>Số điện thoại *</label>
-                <input type="tel" placeholder="Nhập số điện thoại" required>
+                <input type="text" name="phone" placeholder="Nhập số điện thoại" required>
 
                 <label>Email *</label>
-                <input type="email" placeholder="Nhập email" required>
+                <input type="email" name="email" placeholder="Nhập email">
 
                 <label>Địa chỉ *</label>
-                <input type="text" placeholder="Nhập địa chỉ" required>
+                <input type="text" name="address" placeholder="Nhập địa chỉ">
                  <label>Mẫu xe *</label>
-                <select required>
+                <select name="car_model" required>
                     <option value="">Chọn mẫu xe</option>
                     <option value="BMW 320i">BMW 3 Series</option>
                     <option value="BMW X5">BMW 5 Series</option>
@@ -43,8 +57,8 @@
                     <option value="BMW X7">BMW X7</option>
                 </select>
 
-                <label>Thời gian lái thử *</label>
-                <input type="datetime-local" required>
+                <label for="test_date">Thời gian lái thử *</label>
+                <input type="datetime-local" name="test_date" id="test_date" required>
 
                 <button type="submit">Gửi đăng ký</button>
             </form>

@@ -27,7 +27,7 @@ Route::middleware('auth')->group(function () {
 //     return view('welcome');
 // });
 // Route::resource('cars', CarController::class);
-Route::get('/', function () {
+Route::get('/home', function () {
     return view('cars.home');
 });
 Route::get('/mauxe', function () {
