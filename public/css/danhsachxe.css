@@ -1,0 +1,142 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    background: #f3f4f6;
+}
+
+.layout {
+    display: flex;
+    min-height: 100vh;
+}
+
+/* Sidebar styles */
+.sidebar {
+    width: 260px;
+    background-color: #0c1e3a;
+    color: white;
+    padding: 30px 20px;
+    display: flex;
+    flex-direction: column;
+}
+
+.logo {
+    font-size: 22px;
+    font-weight: bold;
+    margin-bottom: 30px;
+}
+
+.logo i {
+    margin-right: 8px;
+}
+
+nav h4 {
+    margin-top: 20px;
+    font-size: 14px;
+    color: #aebdd5;
+}
+
+.nav-item {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 6px;
+    margin-top: 8px;
+    transition: background 0.3s;
+}
+
+.nav-item i {
+    margin-right: 10px;
+}
+
+.nav-item:hover {
+    background-color: #1e3358;
+    color: #fff;
+    text-decoration: none;
+}
+
+.nav-item.active {
+    background-color: #1e3358;
+    color: #fff;
+    text-decoration: none;
+}
+
+.nav-item.highlight {
+    color: #b76aff;
+    text-decoration: none;
+}
+
+/* Main content */
+.main {
+    flex: 1;
+    padding: 40px;
+}
+
+.container {
+    background: white;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    width: 100%;
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 30px;
+    color: #333;
+}
+
+/* Table */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    text-align: center;
+}
+
+thead {
+    background-color: #2563eb;
+    color: white;
+}
+
+th, td {
+    padding: 12px 16px;
+    border: 1px solid #ddd;
+}
+
+tr:nth-child(even) {
+    background-color: #f9fafb;
+}
+
+tr:hover {
+    background-color: #eef2ff;
+}
+.btn {
+    padding: 6px 12px;
+    margin: 0 4px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+.btn.edit {
+    background-color: #3b82f6;
+    color: white;
+}
+
+.btn.delete {
+    background-color: #ef4444;
+    color: white;
+}
+
+.btn.add {
+    background-color: #10b981;
+    color: white;
+    margin-top: 20px;
+}
+
+.add-btn-container {
+    text-align: right;
+    margin-top: 10px;
+}
