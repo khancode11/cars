@@ -45,5 +45,10 @@ Route::get('/phanphoi', function () {
 Route::post('/datlich', [TestDriveController::class, 'store'])->name('testdrive.store');
 Route::get('/admin/lich-lai-thu', [TestDriveController::class, 'index'])->name('testdrive.index');
 Route::get('/admin/vehicle-types', [VehicleTypeController::class, 'index'])->name('admin.vehicle-types.index');
+Route::resource('vehicle-types', VehicleTypeController::class);
+Route::prefix('admin')->name('admin.')->group(function () {
+    Route::resource('vehicle-types', VehicleTypeController::class);
+});
+
 
 require __DIR__.'/auth.php';
