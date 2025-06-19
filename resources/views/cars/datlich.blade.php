@@ -58,7 +58,7 @@
                 </select>
 
                 <label for="test_date">Thời gian lái thử *</label>
-                <input type="datetime-local" name="test_date" id="test_date" required>
+                <input type="datetime-local" name="test_drive_time" id="test_drive_time" required>
 
                 <button type="submit">Gửi đăng ký</button>
             </form>

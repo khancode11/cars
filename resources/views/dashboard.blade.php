@@ -15,15 +15,27 @@
       </div>
       <nav>
         <h4>Dashboard</h4>
-        <ul>
-          <li class="active"><i class="fas fa-chart-line"></i> Overview</li>
-        </ul>
-        <h4>Management</h4>
-        <ul>
-          <li><i class="fas fa-users"></i> User Management</li>
-          <li><i class="fas fa-car-side"></i><a href="{{ url('/admin/vehicle-types') }}">Vehicle Management</a></li>
-          <li><i class="fas fa-calendar-check"></i> Test Drives</li>
-        </ul>
+              <ul>
+                <li class="active"><i class="fas fa-chart-line"></i><a href="{{ url('/dashboard') }}">Overview</a></li>
+              </ul>
+              <h4>Management</h4>
+              <ul>
+          <li>
+              <a href="{{ url('/admin/users') }}">
+                  <i class="fas fa-users"></i> User Management
+              </a>
+          </li>
+          <li>
+              <a href="{{ url('/admin/vehicle-types') }}">
+                  <i class="fas fa-car-side"></i> Vehicle Management
+              </a>
+          </li>
+          <li>
+              <a href="{{ url('/admin/test-drives') }}">
+                  <i class="fas fa-calendar-check"></i> Test Drives
+              </a>
+          </li>
+      </ul>
       </nav>
       <div class="user">
         <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Admin">
@@ -46,7 +58,7 @@
           <i class="fas fa-users"></i>
           <div>
             <h3>Total Users</h3>
-            <p>1,248</p>
+            <h2>{{ number_format($totalUsers) }}</h2>
           </div>
         </div>
 
@@ -54,7 +66,7 @@
           <i class="fas fa-car"></i>
           <div>
             <h3>Available Vehicles</h3>
-            <p>87</p>
+            <h2>{{ $availableVehicles }}</h2>
           </div>
         </div>
 
@@ -62,7 +74,7 @@
           <i class="fas fa-calendar-alt"></i>
           <div>
             <h3>Test Drives</h3>
-            <p>56</p>
+            <h2>{{ $testDrives }}</h2>
           </div>
         </div>
       </section>

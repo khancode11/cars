@@ -154,3 +154,20 @@ header input {
 
 .green { color: #10b981; }
 .red { color: #ef4444; }
+
+.sidebar nav ul li a {
+  color: white;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.sidebar nav ul li a:hover,
+.sidebar nav ul li.active a {
+  color: white;
+  text-decoration: none;
+  background: #1e3a5f;
+  padding-left: 10px;
+  border-radius: 5px;
+}

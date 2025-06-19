@@ -4,6 +4,8 @@ use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\TestDriveController;
 use App\Http\Controllers\Admin\VehicleTypeController;
+use App\Http\Controllers\Admin\UserController;
+use App\Http\Controllers\DashboardController;
 
 /*
 |--------------------------------------------------------------------------
@@ -25,10 +27,7 @@ Route::middleware('auth')->group(function () {
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
-// Route::get('/', function () {
-//     return view('welcome');
-// });
-// Route::resource('cars', CarController::class);
+
 Route::get('/', function () {
     return view('cars.home');
 });
@@ -49,6 +48,11 @@ Route::resource('vehicle-types', VehicleTypeController::class);
 Route::prefix('admin')->name('admin.')->group(function () {
     Route::resource('vehicle-types', VehicleTypeController::class);
 });
-
+Route::prefix('admin')->name('admin.')->group(function () {
+    Route::resource('users', UserController::class);
+});
+Route::delete('/admin/users/{id}', [UserController::class, 'destroy'])->name('admin.users.destroy');
+Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
+Route::get('/admin/test-drives', [TestDriveController::class, 'index'])->name('admin.test-drives.index');
 
 require __DIR__.'/auth.php';

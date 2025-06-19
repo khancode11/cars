@@ -16,17 +16,17 @@
         </div>
         <nav>
             <h4>Dashboard</h4>
-            <a class="nav-item active" href="/overview">
+            <a class="nav-item active" href="{{ url('/dashboard') }}">
                 <i class="fas fa-chart-line"></i> Overview
             </a>
             <h4>Management</h4>
-            <a class="nav-item" href="/users">
+            <a class="nav-item" href="{{ url('/admin/users') }}">
                 <i class="fas fa-users"></i> User Management
             </a>
-            <a class="nav-item highlight" href="/cars/public/admin/vehicle-types">
+            <a class="nav-item highlight" href="{{ url('/admin/vehicle-types') }}">
                 <i class="fas fa-car-side"></i> Vehicle Management
             </a>
-            <a class="nav-item" href="/test-drives">
+            <a class="nav-item" href="{{ url('/admin/test-drives') }}">
                 <i class="fas fa-calendar-check"></i> Test Drives
             </a>
         </nav>
