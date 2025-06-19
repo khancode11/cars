@@ -33,5 +33,27 @@ class TestDriveController extends Controller
         return view('admin.test_drives.index', compact('testDrives'));
     }
 
+    public function edit($id)
+{
+    $drive = TestDrive::findOrFail($id);
+    return view('admin.test_drives.edit', compact('drive'));
+}
+
+public function update(Request $request, $id)
+{
+    $drive = TestDrive::findOrFail($id);
+    $drive->update($request->all());
+
+    return redirect()->route('admin.test-drives.index')->with('success', 'Cập nhật thành công!');
+}
+
+public function destroy($id)
+{
+    $drive = TestDrive::findOrFail($id);
+    $drive->delete();
+
+    return redirect()->route('admin.test-drives.index')->with('success', 'Lịch hẹn đã được xóa!');
+}
+
 }
 

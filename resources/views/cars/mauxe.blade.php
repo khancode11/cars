@@ -12,7 +12,7 @@
     </div>
     <nav>
       <ul class="menu">
-        <li><a href="{{ url('/home') }}">Trang Chủ</a></li>
+        <li><a href="{{ url('/') }}">Trang Chủ</a></li>
         <li><a href="{{ url('/mauxe') }}" class="active">Mẫu Xe</a></li>
         <li><a href="{{ url('/datlich') }}">Đặt Lịch Lái Thử</a></li>
         <li><a href="{{ url('/phanphoi') }}">Hệ thống phân phối</a></li>

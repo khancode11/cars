@@ -20,7 +20,7 @@ use App\Http\Controllers\DashboardController;
 
 Route::get('/dashboard', function () {
     return view('dashboard');
-})->middleware(['auth'])->name('dashboard');
+})->middleware(['auth', 'is_admin'])->name('dashboard');
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
@@ -52,7 +52,23 @@ Route::prefix('admin')->name('admin.')->group(function () {
     Route::resource('users', UserController::class);
 });
 Route::delete('/admin/users/{id}', [UserController::class, 'destroy'])->name('admin.users.destroy');
-Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
+Route::get('/dashboard', [DashboardController::class, 'index'])->middleware(['auth', 'is_admin'])->name('dashboard');
 Route::get('/admin/test-drives', [TestDriveController::class, 'index'])->name('admin.test-drives.index');
+
+use App\Http\Controllers\AccountController;
+
+Route::middleware(['auth'])->group(function () {
+    Route::get('/account', [AccountController::class, 'show'])->name('account.home');
+    Route::get('/account/schedule', [AccountController::class, 'schedule'])->name('account.schedule');
+
+    Route::put('/admin/test-drives/{id}', [TestDriveController::class, 'update'])->name('admin.test_drives.update');
+    Route::get('/testdrive/{id}/edit', [TestDriveController::class, 'edit'])->name('testdrive.edit');
+    Route::put('/testdrive/{id}', [TestDriveController::class, 'update'])->name('testdrive.update');
+    Route::delete('/testdrive/{id}', [TestDriveController::class, 'destroy'])->name('testdrive.destroy');
+    Route::delete('/admin/test-drives/{id}', [TestDriveController::class, 'destroy'])->name('admin.test_drives.destroy');
+
+});
+
+
 
 require __DIR__.'/auth.php';

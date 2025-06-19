@@ -26,6 +26,11 @@
         <main class="main-content">
             <div class="container">
                 <h1>Quản lý lịch lái thử</h1>
+                @if(session('success'))
+                <div class="bg-green-100 text-green-700 px-4 py-2 rounded mb-4">
+                    {{ session('success') }}
+                </div>
+            @endif
                 <table>
                     <thead>
                         <tr>
@@ -48,15 +53,31 @@
                             <td>{{ $drive->email }}</td>
                             <td>{{ $drive->address }}</td>
                             <td>{{ $drive->car_model }}</td>
-                            <td>{{ $drive->test_drive_time }}</td>
-                            <td>
-                                <a href="#" class="edit-btn">Sửa</a>
-                                <form action="#" method="POST" style="display:inline;">
-                                    @csrf
-                                    @method('DELETE')
-                                    <button type="submit" class="delete-btn">Xóa</button>
-                                </form>
+                            <td class="text-red-500">
+                                {{ \Carbon\Carbon::parse($drive->test_drive_time)->format('d/m/Y H:i') }}
                             </td>
+                            <td class="flex gap-2">
+    {{-- Nút Sửa --}}
+    <a href="{{ route('testdrive.edit', $drive->id) }}"
+       class="inline-flex items-center px-3 py-1.5 text-sm font-medium text-white bg-yellow-500 rounded hover:bg-yellow-600 transition">
+        ✏️ <span class="ml-1">Sửa</span>
+    </a>
+
+    {{-- Nút Xóa --}}
+    <form action="{{ route('testdrive.destroy', $drive->id) }}"
+          method="POST"
+          onsubmit="return confirm('Bạn có chắc muốn xóa lịch hẹn này?');"
+          class="inline-block">
+        @csrf
+        @method('DELETE')
+        <button type="submit"
+                class="inline-flex items-center px-3 py-1.5 text-sm font-medium text-white bg-red-500 rounded hover:bg-red-600 transition">
+            🗑️ <span class="ml-1">Xóa</span>
+        </button>
+    </form>
+</td>
+
+
                         </tr>
                         @endforeach
                     </tbody>

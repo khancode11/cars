@@ -11,7 +11,7 @@
   <header>
     <h1>BMW</h1>
     <nav>
-  <a href="{{ url('/home') }}">Trang Chủ</a>
+  <a href="{{ url('/') }}">Trang Chủ</a>
   <a href="{{ url('/mauxe') }}">Mẫu Xe</a>
   <a href="{{ url('/datlich') }}">Đặt Lịch Lái Thử</a>
   <a href="{{ url('/phanphoi') }}">Hệ thống phân phối</a>
@@ -22,7 +22,7 @@
   @endguest
 
   @auth
-    <span>Xin chào, {{ Auth::user()->name }}</span>
+    <span><a href="{{ url('/account') }}">Xin chào, {{ Auth::user()->name }}</a></span>
     <form method="POST" action="{{ route('logout') }}" style="display: inline;">
       @csrf
       <button type="submit" style="background: none; border: none; color: blue; cursor: pointer;">
